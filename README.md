@@ -14,6 +14,9 @@
 #### Informational Page
 ![Informational page wireframe for efficient.ly](./github/images/info.png)
 
+#### 404 Error Page
+![404 Error page wireframe for efficient.ly](./github/images/404.png)
+
 ###### [Wireframes created with Figma](https://www.figma.com/)
 
 ## Component Hierarchy

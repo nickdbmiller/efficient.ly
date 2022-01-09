@@ -48,11 +48,22 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 - Electrical load tool
 - Save various categories of data to different "houses" that will be displayed as interactive list
 - Interactive graphs displaying cost savings based on local utility data
+- Darkmode
 
 ## Project Schedule
 
 |  Day | Deliverable | Status
 |---|---| ---|
+|Jan 7-9| Prompt / Wireframes / Priority Matrix / Component Hierarchy / Timeframes | Incomplete
+|Jan 10| Project Approval /  | Incomplete
+|Jan 11|  | Incomplete
+|Jan 12|  | Incomplete
+|Jan 13|  | Incomplete
+|Jan 14|  | Incomplete
+|Jan 15|  | Incomplete
+|Jan 16|  | Incomplete
+|Jan 17| At least MVP / PMVP and further CSS polish as time allows | Incomplete
+|Jan 18| Presentation | Incomplete
 
 ## Priority Matrix
 
@@ -63,7 +74,10 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 
 | Component | Priority  | Estimated Time    | Curently Invested | Actual Time   |
 | ---       | :---:     |  :---:            | :---:         | :---:         |
+| | H    | 3hrs              | 2 hrs         | 2 hrs         |
 | Total     |           | 40hrs             | Xhrs          | Xhrs        |
+
+## SWOT Analysis
 
 ## Code Snippet
 

@@ -99,6 +99,17 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 | Total     |           | 41hrs             | 0hrs          | Xhrs        |
 
 ## SWOT Analysis
+### Strengths
+> I have a plethora of knowledge on green building design and I have a great understanding of the content that will populate **_efficient.ly_**. The setup of the website will be fast.
+
+### Weaknesses
+> This will be my first time implementing a CSS framework which means it will likely take more time getting setup. However, it will be a powerful and worthwile tool for making a consistent theme throughout the application.
+
+### Opportunities
+> This project is an oportunity to see how far I can push React while on a time budget. My main goal is to make a professional and fully featured functional site with free tools that people will get a lot of value out of.
+
+### Threats
+> I will need to be careful to manage the complexity of this application, as there are many components that will be resused for different subject matters. Keeping the complexity of individual components low and keeping data passed down consistent will mitigate this.
 
 ## Code Snippet
 

@@ -20,7 +20,7 @@
 ###### [Wireframes created with Figma](https://www.figma.com/)
 
 ## Component Hierarchy
-![Component hierarchy for efficient.ly]()
+![Component hierarchy for efficient.ly](./github/images/component_hierarchy.png)
 ###### [Component hierarchy created with Figma](https://www.figma.com/)
 
 ## API and Data Sample

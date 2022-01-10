@@ -65,7 +65,7 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Jan 7-9| Prompt / Wireframes / Priority Matrix / Component Hierarchy / Timeframes | Incomplete
+|Jan 7-9| Prompt / Wireframes / Component Hierarchy / Timeframes | Incomplete
 |Jan 10| Project Approval / Header and Footer / Homepage / 404 Page | Incomplete
 |Jan 11| Tool Page | Incomplete
 |Jan 12| Tool Page / Saved Houses Page| Incomplete
@@ -76,17 +76,27 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 |Jan 17| Post MVP | Incomplete
 |Jan 18| Presentation | Incomplete
 
-## Priority Matrix
-
-![Priority Matrix for Development of efficient.ly]()
-###### [Priority matrix created with Figma](https://www.figma.com/) 
-
 ## Timeframes
 
 | Component | Priority  | Estimated Time    | Curently Invested | Actual Time   |
 | ---       | :---:     |  :---:            | :---:         | :---:         |
-| | H    | 3hrs              | 2 hrs         | 2 hrs         |
-| Total     |           | 40hrs             | Xhrs          | Xhrs        |
+| Airtable Setup | H    | 1hrs              | 0 hrs         | X hrs         |
+| Header | M    | 2hrs              | 0 hrs         | X hrs         |
+| Footer | L    | 1hrs              | 0 hrs         | X hrs         |
+| Homepage | H    | 2hrs              | 0 hrs         | X hrs         |
+| Info Page | H    | 3hrs              | 0 hrs         | X hrs         |
+| Info Page Details | H    | 3hrs              | 0 hrs         | X hrs         |
+| Error Page | M    | 2hrs              | 0 hrs         | X hrs         |
+| Heat Sizing Tool Page | H    | 3hrs              | 0 hrs         | X hrs         |
+| Heat Sizing Tool JS Logic | H    | 3hrs              | 0 hrs         | X hrs         |
+| Category Specific Airtables | H    | 3hrs              | 2 hrs         | X hrs         |
+| Saved House Page | H    | 3hrs              | 0 hrs         | X hrs         |
+| Saved House Airtable | H    | 3hrs              | 2 hrs         | X hrs         |
+| CSS Framework Setup | H    | 3hrs              | 0 hrs         | X hrs         |
+| CSS Polish | M    | 4hrs              | 0 hrs         | X hrs         |
+| Darkmode | L    | 2hrs              | 0 hrs         | X hrs         |
+| Interactive Graphs | L    | 3hrs              | 0 hrs         | X hrs         |
+| Total     |           | 41hrs             | 0hrs          | Xhrs        |
 
 ## SWOT Analysis
 

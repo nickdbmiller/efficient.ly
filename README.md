@@ -48,16 +48,15 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 ## MVP/PostMVP
 #### MVP
 - Uses [Airtable](https://www.airtable.com/) base as API
-- Contains pages on electrical, heating, cooling, water, and ventilation as they pertain to green building design
-- Renders heating data to page, and based on user input sizes heating load requirements and saves to database 
+- Contains information on heating, cooling, and ventilation as they pertain to green building design
+- Renders heating data to page, and based on user input sizes heating load requirements and saves to database
 - Uses [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) styling and responsive design on two different screen sizes
 - Displays header with title of site, navbar, and footer with links to gitHub and [LinkedIn](www.linkedin.com/in/ndbmiller)
 
 #### PostMVP
 - Utilize GIS data from [ESRI](https://developers.arcgis.com/javascript/latest/) to make clickable map for climate zone data
-- Ventilation sizing tool
-- Electrical load tool
-- Use database to save water and energy use data
+- Information on electrical, and water
+- Tools for ventilation, electrical, cooling, and water
 - Save various categories of data to different "houses" that will be displayed as interactive list
 - Interactive graphs displaying cost savings based on local utility data
 - Darkmode
@@ -67,14 +66,14 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 |  Day | Deliverable | Status
 |---|---| ---|
 |Jan 7-9| Prompt / Wireframes / Priority Matrix / Component Hierarchy / Timeframes | Incomplete
-|Jan 10| Project Approval /  | Incomplete
-|Jan 11|  | Incomplete
-|Jan 12|  | Incomplete
-|Jan 13|  | Incomplete
-|Jan 14|  | Incomplete
-|Jan 15|  | Incomplete
-|Jan 16|  | Incomplete
-|Jan 17| At least MVP / PMVP and further CSS polish as time allows | Incomplete
+|Jan 10| Project Approval / Header and Footer / Homepage / 404 Page | Incomplete
+|Jan 11| Tool Page | Incomplete
+|Jan 12| Tool Page / Saved Houses Page| Incomplete
+|Jan 13| Informational Pages / CSS Framework| Incomplete
+|Jan 14| CSS Polish | Incomplete
+|Jan 15| Post MVP | Incomplete
+|Jan 16| Post MVP | Incomplete
+|Jan 17| Post MVP | Incomplete
 |Jan 18| Presentation | Incomplete
 
 ## Priority Matrix

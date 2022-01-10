@@ -6,24 +6,24 @@
 
 ## Wireframes
 #### Homepage
-![Homepage wireframe for efficient.ly](./github/images/home.png)
+![Homepage wireframe for efficient.ly](./.github/images/home.png)
 
 #### Informational Page
-![Informational page wireframe for efficient.ly](./github/images/info.png)
+![Informational page wireframe for efficient.ly](./.github/images/info.png)
 
 #### Tool Page
-![Tool page wireframe for efficient.ly](./github/images/tool.png)
+![Tool page wireframe for efficient.ly](./.github/images/tool.png)
 
 #### Saved Page
-![Saved page wireframe for efficient.ly](./github/images/saved.png)
+![Saved page wireframe for efficient.ly](./.github/images/saved.png)
 
 #### 404 Error Page
-![404 Error page wireframe for efficient.ly](./github/images/404.png)
+![404 Error page wireframe for efficient.ly](./.github/images/404.png)
 
 ###### [Wireframes created with Figma](https://www.figma.com/)
 
 ## Component Hierarchy
-![Component hierarchy for efficient.ly](./github/images/component_hierarchy.png)
+![Component hierarchy for efficient.ly](./.github/images/component_hierarchy.png)
 ###### [Component hierarchy created with Figma](https://www.figma.com/)
 
 ## API and Data Sample

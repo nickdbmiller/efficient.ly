@@ -58,6 +58,7 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 - Information on electrical, and water
 - Tools for ventilation, electrical, cooling, and water
 - Save various categories of data to different "houses" that will be displayed as interactive list
+- Make the houses editable
 - Interactive graphs displaying cost savings based on local utility data
 - Darkmode
 

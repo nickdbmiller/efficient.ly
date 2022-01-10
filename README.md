@@ -6,13 +6,16 @@
 
 ## Wireframes
 #### Homepage
-![Homepage wireframe for efficient.ly](./github/images/home_page.png)
+![Homepage wireframe for efficient.ly](./github/images/home.png)
+
+#### Informational Page
+![Informational page wireframe for efficient.ly](./github/images/info.png)
 
 #### Tool Page
 ![Tool page wireframe for efficient.ly](./github/images/tool.png)
 
-#### Informational Page
-![Informational page wireframe for efficient.ly](./github/images/info.png)
+#### Saved Page
+![Saved page wireframe for efficient.ly](./github/images/saved.png)
 
 #### 404 Error Page
 ![404 Error page wireframe for efficient.ly](./github/images/404.png)

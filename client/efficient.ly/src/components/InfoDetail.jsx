@@ -10,7 +10,6 @@ export default function InfoDetail() {
     useEffect(() => {
         const fetchInfo = async() => {
             const res = await api.get(`info/${id}`);
-            console.log(res.data);
             setInfo(res.data);
         };
         fetchInfo();

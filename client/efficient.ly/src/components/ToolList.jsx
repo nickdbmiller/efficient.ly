@@ -8,6 +8,7 @@ export default function ToolList() {
     useEffect(() => {
         const fetchTools = async() => {
             const res = await api.get('tools');
+            console.log(res);
             setToolData(res.data.records);
         };
         fetchTools();
@@ -21,7 +22,7 @@ export default function ToolList() {
                     return (
                         <li key={tool.id}>
                             <Link to={`/tools/${tool?.fields.toolName}`}>
-                                <h3>{`${tool?.fields.toolName} Requirements`}</h3>
+                                <h3>{`${tool?.fields.toolUpperCase}`}</h3>
                             </Link>
                         </li>
                     )

@@ -1,0 +1,32 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import api from "../services/apiConfig";
+
+export default function ToolList() {
+    const [toolData, setToolData] = useState([]);
+
+    useEffect(() => {
+        const fetchTools = async() => {
+            const res = await api.get('tools');
+            setToolData(res.data.records);
+        };
+        fetchTools();
+    }, []);
+
+    return (
+        <div>
+            <h2>Choose a tool:</h2>
+            <ul>
+                {toolData.map((tool) => {
+                    return (
+                        <li key={tool.id}>
+                            <Link to={`/tools/${tool?.id}`}>
+                                <h3>{tool?.fields.toolName}</h3>
+                            </Link>
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
+    )
+}

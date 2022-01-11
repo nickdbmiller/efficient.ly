@@ -7,7 +7,7 @@ export default function Info() {
 
     useEffect(() => {
         const fetchInfo = async() => {
-            const res = await api.get('infoData');
+            const res = await api.get('info');
             setInfoData(res.data.records);
         };
         fetchInfo();
@@ -20,7 +20,7 @@ export default function Info() {
                 {infoData.map((info) => {
                     return (
                         <li key={info.id}>
-                            <Link to={`/info/${info?.fields.category}`}>
+                            <Link to={`/info/${info?.id}`}>
                                 <h3>{info?.fields.category}</h3>
                             </Link>
                         </li>

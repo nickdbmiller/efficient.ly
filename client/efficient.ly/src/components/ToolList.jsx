@@ -20,8 +20,8 @@ export default function ToolList() {
                 {toolData.map((tool) => {
                     return (
                         <li key={tool.id}>
-                            <Link to={`/tools/${tool?.id}`}>
-                                <h3>{tool?.fields.toolName}</h3>
+                            <Link to={`/tools/${tool?.fields.toolName}`}>
+                                <h3>{`${tool?.fields.toolName} Requirements`}</h3>
                             </Link>
                         </li>
                     )

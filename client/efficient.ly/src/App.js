@@ -21,7 +21,7 @@ function App() {
         <Route path="/info" element={<Info />} />
         <Route path="/info/:id" element={<InfoDetail />} />
         <Route path="/tools" element={<ToolList />} />
-        <Route path="/tools/:id" element={<Tool />} />
+        <Route path="/tools/:tool" element={<Tool />} />
         <Route path="/saved" element={<Saved />} />
         <Route path="/:undefined" element={<Error />} />
       </Routes>

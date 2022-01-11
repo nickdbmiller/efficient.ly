@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Info from './components/Info';
+import InfoDetail from './components/InfoDetail';
 import Tools from './components/Tools';
 import Saved from './components/Saved';
 import Error from './components/Error';
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/info" element={<Info />} />
+        <Route path="/info/:category" element={<InfoDetail />} />
         <Route path="/tools" element={<Tools />} />
         <Route path="/saved" element={<Saved />} />
         <Route path="/:undefined" element={<Error />} />

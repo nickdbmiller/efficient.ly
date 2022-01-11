@@ -20,7 +20,7 @@ export default function Info() {
                 {infoData.map((info) => {
                     return (
                         <li key={info.id}>
-                            <Link to={`/info/${info.id}`}>
+                            <Link to={`/info/${info?.fields.category}`}>
                                 <h3>{info?.fields.category}</h3>
                             </Link>
                         </li>

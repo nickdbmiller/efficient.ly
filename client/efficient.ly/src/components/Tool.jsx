@@ -1,4 +1,5 @@
 import { useState } from "react";
+import api from "../services/apiConfig";
 
 export default function Tool() {
     const default_input = {                     // UNITS:
@@ -93,6 +94,15 @@ export default function Tool() {
             "btuPerHr": result,
         }));
     };
+
+    const saveData = async () => {
+        const fields = input;
+        await api.post("heatingData", { fields });
+    }
+
+    const resetTool = () => {
+        setInput(default_input);
+    }
 
     return (
         <div>
@@ -370,7 +380,8 @@ export default function Tool() {
                 <button>Calculate</button>
                 <p>Heating Load: {input.btuPerHr} Btu per hour</p>
             </form>
-            <button>Save</button>
+            <button onClick={saveData}>Save Data</button>
+            <button onClick={resetTool}>Reset Fields</button>
         </div>
     )
 }

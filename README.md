@@ -67,7 +67,7 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 |  Day | Deliverable | Status
 |---|---| ---|
 |Jan 7-9| Prompt / Wireframes / Component Hierarchy / Timeframes | Complete
-|Jan 10| Project Approval / Header and Footer / Homepage / 404 Page | Incomplete
+|Jan 10| Project Approval / Header and Footer / Homepage / 404 Page | Complete
 |Jan 11| Tool Page | Incomplete
 |Jan 12| Tool Page / Saved Houses Page| Incomplete
 |Jan 13| Informational Pages / CSS Framework| Incomplete

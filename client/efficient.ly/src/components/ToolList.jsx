@@ -8,7 +8,6 @@ export default function ToolList() {
     useEffect(() => {
         const fetchTools = async() => {
             const res = await api.get('tools');
-            console.log(res);
             setToolData(res.data.records);
         };
         fetchTools();

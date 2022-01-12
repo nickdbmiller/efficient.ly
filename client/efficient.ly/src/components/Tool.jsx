@@ -27,6 +27,7 @@ export default function Tool() {
         "windowLength": 3,
         "windowWidth": 2,
         "windowRValue": 3,
+        "indoorTempNight": 62,
         "btuPerHr": 0,
     };
 
@@ -81,6 +82,7 @@ export default function Tool() {
                     id="rValue"
                     type="number"
                     min="0"
+                    step="0.001"
                     value={input.rValue}
                     onChange={handleNumberInput}
                 />
@@ -90,6 +92,7 @@ export default function Tool() {
                     id="framingRValue"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.framingRValue}
                     onChange={handleNumberInput}
                 />
@@ -99,6 +102,7 @@ export default function Tool() {
                     id="studDepth"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.studDepth}
                     onChange={handleNumberInput}
                 />
@@ -108,6 +112,7 @@ export default function Tool() {
                     id="studWidth"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.studWidth}
                     onChange={handleNumberInput}
                 />
@@ -117,6 +122,7 @@ export default function Tool() {
                     id="studSpacing"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.studSpacing}
                     onChange={handleNumberInput}
                 />
@@ -126,6 +132,7 @@ export default function Tool() {
                     id="exteriorWallInsulationThickness"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.exteriorWallInsulationThickness}
                     onChange={handleNumberInput}
                 />
@@ -135,6 +142,7 @@ export default function Tool() {
                     id="interiorWallInsulationThickness"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.interiorWallInsulationThickness}
                     onChange={handleNumberInput}
                 />
@@ -144,6 +152,7 @@ export default function Tool() {
                     id="rafterDepth"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.rafterDepth}
                     onChange={handleNumberInput}
                 />
@@ -153,6 +162,7 @@ export default function Tool() {
                     id="rafterWidth"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.rafterWidth}
                     onChange={handleNumberInput}
                 />
@@ -162,6 +172,7 @@ export default function Tool() {
                     id="rafterSpacing"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.rafterSpacing}
                     onChange={handleNumberInput}
                 />
@@ -171,6 +182,7 @@ export default function Tool() {
                     id="exteriorRoofInsulationThickness"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.exteriorRoofInsulationThickness}
                     onChange={handleNumberInput}
                 />
@@ -180,6 +192,7 @@ export default function Tool() {
                     id="interiorRoofInsulationThickness"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.interiorRoofInsulationThickness}
                     onChange={handleNumberInput}
                 />
@@ -189,6 +202,7 @@ export default function Tool() {
                     id="roofPitch"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.roofPitch}
                     onChange={handleNumberInput}
                 />
@@ -198,6 +212,7 @@ export default function Tool() {
                     id="joistDepth"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.joistDepth}
                     onChange={handleNumberInput}
                 />
@@ -207,6 +222,7 @@ export default function Tool() {
                     id="joistWidth"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.joistWidth}
                     onChange={handleNumberInput}
                 />
@@ -216,6 +232,7 @@ export default function Tool() {
                     id="joistSpacing"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.joistSpacing}
                     onChange={handleNumberInput}
                 />
@@ -225,6 +242,7 @@ export default function Tool() {
                     id="houseWidth"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.houseWidth}
                     onChange={handleNumberInput}
                 />
@@ -234,6 +252,7 @@ export default function Tool() {
                     id="houseLength"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.houseLength}
                     onChange={handleNumberInput}
                 />
@@ -243,6 +262,7 @@ export default function Tool() {
                     id="storyHeight"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.storyHeight}
                     onChange={handleNumberInput}
                 />
@@ -252,6 +272,7 @@ export default function Tool() {
                     id="storyNum"
                     type="number"
                     min="0"
+                    step="1"
                     value={input.storyNum}
                     onChange={handleNumberInput}
                 />
@@ -261,6 +282,7 @@ export default function Tool() {
                     id="windowNum"
                     type="number"
                     min="0"
+                    step="1"
                     value={input.windowNum}
                     onChange={handleNumberInput}
                 />
@@ -270,6 +292,7 @@ export default function Tool() {
                     id="windowLength"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.windowLength}
                     onChange={handleNumberInput}
                 />
@@ -279,6 +302,7 @@ export default function Tool() {
                     id="windowWidth"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.windowWidth}
                     onChange={handleNumberInput}
                 />
@@ -288,7 +312,18 @@ export default function Tool() {
                     id="windowRValue"
                     type="number"
                     min="0"
+                    step="0.01"
                     value={input.windowRValue}
+                    onChange={handleNumberInput}
+                />
+
+                <label htmlFor="indoorTempNight">What is the coldest you ever want your house to get at night?:</label>
+                <input
+                    id="indoorTempNight"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={input.indoorTempNight}
                     onChange={handleNumberInput}
                 />
 

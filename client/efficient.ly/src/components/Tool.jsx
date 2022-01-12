@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Tool() {
     const default_input = {                     // UNITS:
         "climateZone": 3,                       // no units
-        "framingRValue": 0.91,                  // R
+        "framingRValue": 0.910,                 // R
         "insulationRValue": 4,                  // R
         "studDepth": 3.5,                       // in.
         "studWidth": 1.5,                       // in.
@@ -22,7 +22,7 @@ export default function Tool() {
         "houseWidth": 20,                       // ft.
         "houseLength": 40,                      // ft.
         "storyHeight": 14,                      // ft.
-        "storyNum": 1,                          // no units
+        "storyNum": 2,                          // no units
         "windowNum": 10,                        // no units
         "windowLength": 3,                      // ft.
         "windowWidth": 2,                       // ft.
@@ -43,7 +43,7 @@ export default function Tool() {
 
     let result = 0;
     const calculate = () => {
-        let worstCaseTemp = 0;
+        let worstCaseTemp = 0;      // degF
         if (input.climateZone === 1) {
             worstCaseTemp = 20;
         } else if (input.climateZone === 2) {
@@ -70,20 +70,20 @@ export default function Tool() {
         let wallBtuPerHrF = wallSurfaceArea / avgWallRValue;
         
         // Roof
-        let roofSurfaceArea = input.houseLength * (input.houseLength / Math.cos(input.roofPitch * (Math.PI/180)));
-        let avgRoofRValue = ((input.rafterDepth * ((input.rafterSpacing - input.rafterWidth) * input.insulationRValue + input.rafterWidth * input.framingRValue) / input.rafterSpacing) + (input.exteriorRoofInsulationThickness + input.interiorRoofInsulationThickness) * input.insulationRValue) / roofSurfaceArea;
+        let roofSurfaceArea = input.houseLength * (input.houseWidth / Math.cos(input.roofPitch * (Math.PI/180)));        
+        let avgRoofRValue = ((input.rafterDepth * 0.69) * ((input.rafterSpacing - input.rafterWidth) * input.insulationRValue + input.rafterWidth * input.framingRValue) / input.rafterSpacing) + ((input.exteriorRoofInsulationThickness + input.interiorRoofInsulationThickness) * input.insulationRValue);
         let roofBtuPerHrF = roofSurfaceArea / avgRoofRValue;
-    
+
         // Floor
         let floorSurfaceArea = input.houseLength * input.houseWidth;
-        let avgFloorRValue = (input.joistDepth * ((input.joistSpacing - input.joistWidth) * input.insulationRValue + input.joistWidth * input.framingRValue) / input.joistSpacing) / floorSurfaceArea;
+        let avgFloorRValue = input.joistDepth * ((input.joistSpacing - input.joistWidth) * input.insulationRValue + input.joistWidth * input.framingRValue) / input.joistSpacing;
         let floorBtuPerHrF = floorSurfaceArea / avgFloorRValue;
 
         // Total
         let totalBtuPerHrF = wallBtuPerHrF + roofBtuPerHrF + floorBtuPerHrF;
 
-        result = totalBtuPerHrF * (input.indoorTempNight - worstCaseTemp);
-    }
+        result = (Math.ceil(1.5 * totalBtuPerHrF * (input.indoorTempNight - worstCaseTemp)));
+        }
 
     const handleSubmit = (e) => {
         e.preventDefault();

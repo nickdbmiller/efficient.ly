@@ -52,7 +52,8 @@ export default function Tool() {
         
         // Roof
         let roofSurfaceArea = input.houseLength * (input.houseLength / Math.cos(input.roofPitch * (Math.PI/180)));
-        let avgRoofRValue = ((input.rafterDepth * ((input.rafterSpacing - input.rafterWidth) * input.insulationRValue + input.rafterWidth * input.framingRValue) / input.rafterSpacing) + (input.exteriorRoofInsulationThickness + input.interiorRoofInsulationThickness) * input.insulationRValue) / wallSurfaceArea;
+        let avgRoofRValue = ((input.rafterDepth * ((input.rafterSpacing - input.rafterWidth) * input.insulationRValue + input.rafterWidth * input.framingRValue) / input.rafterSpacing) + (input.exteriorRoofInsulationThickness + input.interiorRoofInsulationThickness) * input.insulationRValue) / roofSurfaceArea;
+        let roofBtuPerHrF = roofSurfaceArea / avgWallRValue;
     }
 
     const handleSubmit = (e) => {

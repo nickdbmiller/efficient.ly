@@ -1,46 +1,37 @@
 import { useState } from "react";
 
 export default function Tool() {
-    const default_input = {
-        "climateZone": 3,
-        "framingRValue": 0.91,
-        "rValue": 4,
-        "studDepth": 3.5,
-        "studWidth": 1.5,
-        "studSpacing": 16,
-        "exteriorWallInsulationThickness": 0,
-        "interiorWallInsulationThickness": 0,
-        "rafterDepth": 11.25,
-        "rafterWidth": 1.5,
-        "rafterSpacing": 48,
-        "exteriorRoofInsulationThickness": 0,
-        "interiorRoofInsulationThickness": 0,
-        "roofPitch": 45,
-        "joistDepth": 5.5,
-        "joistWidth": 1.5,
-        "joistSpacing": 16,
-        "houseWidth": 20,
-        "houseLength": 40,
-        "storyHeight": 14,
-        "storyNum": 1,
-        "windowNum": 10,
-        "windowLength": 3,
-        "windowWidth": 2,
-        "windowRValue": 3,
-        "indoorTempNight": 62,
-        "btuPerHr": 0,
+    const default_input = {                     // UNITS:
+        "climateZone": 3,                       // no units
+        "framingRValue": 0.91,                  // R
+        "insulationRValue": 4,                  // R
+        "studDepth": 3.5,                       // in.
+        "studWidth": 1.5,                       // in.
+        "studSpacing": 16,                      // in.
+        "exteriorWallInsulationThickness": 0,   // in.
+        "interiorWallInsulationThickness": 0,   // in.
+        "rafterDepth": 11.25,                   // in.
+        "rafterWidth": 1.5,                     // in.
+        "rafterSpacing": 48,                    // in.
+        "exteriorRoofInsulationThickness": 0,   // in.
+        "interiorRoofInsulationThickness": 0,   // in.
+        "roofPitch": 45,                        // deg.
+        "joistDepth": 5.5,                      // in.
+        "joistWidth": 1.5,                      // in.
+        "joistSpacing": 16,                     // in.
+        "houseWidth": 20,                       // ft.
+        "houseLength": 40,                      // ft.
+        "storyHeight": 14,                      // ft.
+        "storyNum": 1,                          // no units
+        "windowNum": 10,                        // no units
+        "windowLength": 3,                      // ft.
+        "windowWidth": 2,                       // ft.
+        "windowRValue": 3,                      // R
+        "indoorTempNight": 62,                  // degF
+        "btuPerHr": 0,                          // Btu/hr
     };
 
     const [input, setInput] = useState(default_input);
-    const [result, setResult] = useState(0);
-
-    const handleSlider = (e) => {
-        const { id, valueAsNumber } = e.target;
-        setInput((prevInput) => ({
-            ...prevInput,
-            [id]: valueAsNumber,
-        }))
-    }
 
     const handleNumberInput = (e) => {
         const { id, valueAsNumber } = e.target;
@@ -50,9 +41,27 @@ export default function Tool() {
         }));
     }
 
-    const handleCalcs = async (e) => {
+    let result = 0;
+    const calculate = () => {
+        // Walls
+        let height = input.storyHeight * input.storyNum;
+        let wallSurfaceArea = 2 * ((input.houseLength + input.houseWidth) * height);
+        let windowSurfaceArea = input.windowLength * input.windowWidth * input.windowNum;
+        let avgWallRValue = (input.windowRValue * windowSurfaceArea + (wallSurfaceArea - windowSurfaceArea) * ((input.studDepth * ((input.studSpacing - input.studWidth) * input.insulationRValue + input.studWidth * input.framingRValue) / input.studSpacing) + (input.exteriorWallInsulationThickness + input.interiorWallInsulationThickness) * input.insulationRValue)) / wallSurfaceArea;
+        let wallBtuPerHrF = wallSurfaceArea / avgWallRValue;
+        
+        // Roof
+        let roofSurfaceArea = input.houseLength * (input.houseLength / Math.cos(input.roofPitch * (Math.PI/180)));
+        let avgRoofRValue = ((input.rafterDepth * ((input.rafterSpacing - input.rafterWidth) * input.insulationRValue + input.rafterWidth * input.framingRValue) / input.rafterSpacing) + (input.exteriorRoofInsulationThickness + input.interiorRoofInsulationThickness) * input.insulationRValue) / wallSurfaceArea;
+    }
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setResult(input.climateZone*input.wallThickness)
+        // calculate();
+        setInput((prevInput) => ({
+            ...prevInput,
+            "btuPerHr": result,
+        }));
     };
 
     return (
@@ -61,7 +70,7 @@ export default function Tool() {
             <p>Tool Desciption</p>
             <form
                 id="toolForm"
-                onSubmit={handleCalcs}
+                onSubmit={handleSubmit}
             >
             
                 <label htmlFor="climateZone">Choose your climate zone:</label>
@@ -73,17 +82,17 @@ export default function Tool() {
                     min="1"
                     max="6"
                     step="1"
-                    onChange={handleSlider}
+                    onChange={handleNumberInput}
                 />
                 <span id="climateZoneOutput">{input.climateZone}</span>
                 
-                <label htmlFor="rValue">Input Insulation R Value:</label>
+                <label htmlFor="insulationRValue">Input Insulation R Value:</label>
                 <input
-                    id="rValue"
+                    id="insulationRValue"
                     type="number"
                     min="0"
                     step="0.001"
-                    value={input.rValue}
+                    value={input.insulationRValue}
                     onChange={handleNumberInput}
                 />
 
@@ -328,7 +337,7 @@ export default function Tool() {
                 />
 
                 <button>Calculate</button>
-                <p>Heating Load: {result} Btu per hour</p>
+                <p>Heating Load: {input.btuPerHr} Btu per hour</p>
             </form>
             <button>Information</button>
         </div>

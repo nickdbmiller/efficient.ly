@@ -43,6 +43,21 @@ export default function Tool() {
 
     let result = 0;
     const calculate = () => {
+        let worstCaseTemp = 0;
+        if (input.climateZone === 1) {
+            worstCaseTemp = ;
+        } else if (input.climateZone === 2) {
+            worstCaseTemp = ;
+        } else if (input.climateZone === 3) {
+            worstCaseTemp = ;
+        } else if (input.climateZone === 4) {
+            worstCaseTemp = ;
+        } else if (input.climateZone === 5) {
+            worstCaseTemp = ;
+        } else if (input.climateZone === 6) {
+            worstCaseTemp = ;
+        }
+
         // Walls
         let height = input.storyHeight * input.storyNum;
         let wallSurfaceArea = 2 * ((input.houseLength + input.houseWidth) * height);
@@ -53,12 +68,22 @@ export default function Tool() {
         // Roof
         let roofSurfaceArea = input.houseLength * (input.houseLength / Math.cos(input.roofPitch * (Math.PI/180)));
         let avgRoofRValue = ((input.rafterDepth * ((input.rafterSpacing - input.rafterWidth) * input.insulationRValue + input.rafterWidth * input.framingRValue) / input.rafterSpacing) + (input.exteriorRoofInsulationThickness + input.interiorRoofInsulationThickness) * input.insulationRValue) / roofSurfaceArea;
-        let roofBtuPerHrF = roofSurfaceArea / avgWallRValue;
+        let roofBtuPerHrF = roofSurfaceArea / avgRoofRValue;
+    
+        // Floor
+        let floorSurfaceArea = input.houseLength * input.houseWidth;
+        let avgFloorRValue = (input.joistDepth * ((input.joistSpacing - input.joistWidth) * input.insulationRValue + input.joistWidth * input.framingRValue) / input.joistSpacing) / floorSurfaceArea;
+        let floorBtuPerHrF = floorSurfaceArea / avgFloorRValue;
+
+        // Total
+        let totalBtuPerHrF = wallBtuPerHrF + roofBtuPerHrF + floorBtuPerHrF;
+
+        result = totalBtuPerHrF * (input.indoorTempNight - worstCaseTemp);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // calculate();
+        calculate();
         setInput((prevInput) => ({
             ...prevInput,
             "btuPerHr": result,

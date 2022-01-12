@@ -45,17 +45,21 @@ export default function Tool() {
     const calculate = () => {
         let worstCaseTemp = 0;
         if (input.climateZone === 1) {
-            worstCaseTemp = ;
+            worstCaseTemp = 20;
         } else if (input.climateZone === 2) {
-            worstCaseTemp = ;
+            worstCaseTemp = 10;
         } else if (input.climateZone === 3) {
-            worstCaseTemp = ;
+            worstCaseTemp = 0;
         } else if (input.climateZone === 4) {
-            worstCaseTemp = ;
+            worstCaseTemp = -10;
         } else if (input.climateZone === 5) {
-            worstCaseTemp = ;
+            worstCaseTemp = -20;
         } else if (input.climateZone === 6) {
-            worstCaseTemp = ;
+            worstCaseTemp = -30;
+        } else if (input.climateZone === 7) {
+            worstCaseTemp = -40;
+        } else if (input.climateZone === 8) {
+            worstCaseTemp = -60;
         }
 
         // Walls
@@ -106,7 +110,7 @@ export default function Tool() {
                     name="range"
                     value={input.climateZone}
                     min="1"
-                    max="6"
+                    max="8"
                     step="1"
                     onChange={handleNumberInput}
                 />

@@ -23,7 +23,9 @@ export default function InfoDetail() {
     return (
         <div>
             <h2>{`${info.fields?.category} Information`}</h2>
-            <p>{info.fields?.textContent}</p>
+            <p>{info.fields?.firstParagraph}</p>
+            <p>{info.fields?.secondParagraph}</p>
+            <p>{info.fields?.thirdParagraph}</p>
         </div>
     )
 }

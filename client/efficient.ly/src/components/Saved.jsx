@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import api from "../services/apiConfig";
 
 export default function Saved() {
@@ -8,7 +7,6 @@ export default function Saved() {
     useEffect(() => {
         const fetchSaveData = async() => {
             const res = await api.get('heatingData');
-            console.log(res);
             setSaveData(res.data.records);
         };
         fetchSaveData();
@@ -18,10 +16,15 @@ export default function Saved() {
         <div>
             <h2>Saved Data:</h2>
             <ul>
-                {saveData.map((house) => {
+                {saveData?.map((house, i) => {
                     return (
-                        <li key={house.id}>
-                                <h3>{`${house?.fields.climateZone}`}</h3>
+                        <li key={i}>
+                            <h3>House #{i + 1}</h3>
+                            {Object.keys(house.fields).map((key, j) => {
+                                return (
+                                    <p key={j}>{key}: {house.fields[key]}</p>
+                                )
+                            })}
                         </li>
                     )
                 })}

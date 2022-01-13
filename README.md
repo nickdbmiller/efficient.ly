@@ -32,15 +32,37 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 
 ```
 {
-    "id": "recuxb0JIB5JHgLcf",
+    "id": "recr5WqMFpDchrkXw",
     "fields": {
-        "climateZone": 6,
-        "wallThickness": 12,
-        "wallRValue": 28,
-        "btuPerHr": 9000,
-        "sqrFeet": 1500
+        "houseWidth": 20,
+        "houseLength": 40,
+        "exteriorRoofInsulationThickness": 0,
+        "windowLength": 3,
+        "joistWidth": 1.5,
+        "storyNum": 2,
+        "rafterWidth": 1.5,
+        "joistDepth": 5.5,
+        "windowNum": 10,
+        "studSpacing": 16,
+        "climateZone": 3,
+        "insulationRValue": 4,
+        "roofPitch": 45,
+        "joistSpacing": 16,
+        "btuPerHr": 0,
+        "interiorWallInsulationThickness": 0,
+        "studWidth": 1.5,
+        "windowWidth": 2,
+        "interiorRoofInsulationThickness": 0,
+        "studDepth": 3.5,
+        "rafterSpacing": 48,
+        "exteriorWallInsulationThickness": 0,
+        "framingRValue": 0.91,
+        "storyHeight": 14,
+        "rafterDepth": 11.25,
+        "indoorTempNight": 62,
+        "windowRValue": 3
     },
-    "createdTime": "2022-01-08T01:10:17.000Z"
+    "createdTime": "2022-01-08T01:12:28.000Z"
 }
 ```
 ###### Uses [React Router](https://reactrouter.com/docs/en/v6) for routes and [Axios](https://axios-http.com/docs/intro) for API requests.

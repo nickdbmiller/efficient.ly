@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
 import api from "../services/apiConfig";
+import LoadingPage from "./LoadingPage";
 
 export default function Saved() {
     const [saveData, setSaveData] = useState([]);
 
     useEffect(() => {
+        console.log(saveData);
         const fetchSaveData = async() => {
             const res = await api.get('heatingData');
             setSaveData(res.data.records);
         };
         fetchSaveData();
     }, []);
+
+    if (saveData.length === 0) {
+        return <LoadingPage />
+    }
 
     return (
         <div>

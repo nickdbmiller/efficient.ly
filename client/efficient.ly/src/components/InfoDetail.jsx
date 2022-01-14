@@ -22,10 +22,16 @@ export default function InfoDetail() {
 
     return (
         <div>
-            <h2>{`${info.fields?.category} Information`}</h2>
+            <h2>Learn About Efficient {info.fields?.category}</h2>
+            
             <p>{info.fields?.firstParagraph}</p>
+            <img src={info.fields?.imgSrc1} alt={info.fields?.imgAlt1}/>
+
             <p>{info.fields?.secondParagraph}</p>
+            <img src={info.fields?.imgSrc2} alt={info.fields?.imgAlt2}/>
+
             <p>{info.fields?.thirdParagraph}</p>
+            <img src={info.fields?.imgSrc3} alt={info.fields?.imgAlt3}/>
         </div>
     )
 }

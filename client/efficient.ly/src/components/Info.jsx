@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../services/apiConfig";
 
+import LoadingPage from "./LoadingPage";
+
 export default function Info() {
     const [infoData, setInfoData] = useState([]);
 
@@ -12,6 +14,10 @@ export default function Info() {
         };
         fetchInfo();
     }, []);
+
+    if (infoData.length === 0) {
+        return <LoadingPage />
+    }
 
     return (
         <div>

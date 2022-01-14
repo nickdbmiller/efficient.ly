@@ -1,2 +1,0 @@
-# Overview
-efficient.ly is a React application that empowers users to make informed decisions about energy and resource usage in their homes. The site contains a plethora of information on ways to make their homes more efficient and therefore, save money and protect the environment.

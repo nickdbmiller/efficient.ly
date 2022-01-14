@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../services/apiConfig";
 
+import LoadingPage from "./LoadingPage";
+
 export default function ToolList() {
     const [toolData, setToolData] = useState([]);
 
@@ -12,6 +14,10 @@ export default function ToolList() {
         };
         fetchTools();
     }, []);
+
+    if (toolData.length === 0) {
+        return <LoadingPage />
+    }
 
     return (
         <div>

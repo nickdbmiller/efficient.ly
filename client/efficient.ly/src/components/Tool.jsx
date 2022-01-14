@@ -109,7 +109,7 @@ export default function Tool() {
         <div>
             <h2>Heating Load Calculator</h2>
             <p>Calculate the heating reqirements for your house. The tool will calculate the size of your heating system in Btu per hour. If there is a field you are unsure about you can leave it as the default, but the more accurately you fill out the tool, the more accurate your result will be.</p>
-            <Link to={`/info/recBDqjgEjNLC6hEu`}>Information on Efficient Heating Systems</Link>
+            <Link to={`/info/recBDqjgEjNLC6hEu`}>More information on Efficient Heating Systems</Link>
             <form
                 id="toolForm"
                 onSubmit={handleSubmit}

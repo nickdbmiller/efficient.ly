@@ -24,7 +24,7 @@ export default function Footer() {
                 </a>
             </div>
 
-            <div className="text-lime-1000">🄯 Nicholas Barrett-Miller 2022</div>
+            <div className="text-lime-100">🄯 Nicholas Barrett-Miller 2022</div>
         </footer>
     )
 }

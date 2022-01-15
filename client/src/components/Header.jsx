@@ -2,7 +2,7 @@ import Navbar from "./Navbar"
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-50 flex justify-between items-center bg-lime-900 px-1 py-4 shadow-md shadow-lime-900">
+        <header className="sticky top-0 z-50 flex justify-between items-center bg-lime-900 px-1 py-4 shadow-xl">
             <a
                 className="flex justify-between items-center rounded-lg text-lime-400 text-2xl
                 hover:text-lime-300 hover:-translate-y-0.5 transform transition

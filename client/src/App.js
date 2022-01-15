@@ -16,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/info" element={<Info />} />
@@ -25,6 +26,7 @@ function App() {
         <Route path="/saved" element={<Saved />} />
         <Route path="/:undefined" element={<Error />} />
       </Routes>
+      </main>
       <Footer />
     </div>
   );

@@ -1,14 +1,18 @@
 
 export default function Home() {
     return (
-        <div className="text-lime-1000">
+        <div>
             <h2 
-                className="text-lg"
+                className="text-xl mt-6"
             >
                 Welcome <span className="text-lime-700">Home</span>
             </h2>
-            <p>efficient.ly empowers your decision making about your home.</p>
-            <p>Here you can learn ways to make your home more efficient, save money, and protect the planet.</p>
+            <p className="mt-6">efficient.ly empowers your decision making about your home.</p>
+            <div className="relative top-0 left-0">
+                <img className="h-100 relative top-0 left-0" src="https://i.imgur.com/UB2uELH.png" alt="green watercolor splash" />
+                <img className="h-100 absolute top-0 left-0" src="https://i.imgur.com/injgadx.png" alt="barn" />
+            </div>
+            <p className="mt-6">Here you can learn ways to make your home more efficient, save money, and protect the planet.</p>
         </div>
     )
 }

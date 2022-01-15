@@ -3,7 +3,7 @@ export default function Home() {
     return (
         <div>
             <h2 
-                className="text-xl mt-6"
+                className="text-xl"
             >
                 Welcome <span className="text-lime-700">Home</span>
             </h2>

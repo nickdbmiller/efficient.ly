@@ -21,13 +21,14 @@ export default function Info() {
 
     return (
         <div>
-            <h2>Choose a category:</h2>
-            <ul>
+            <h2 className="text-xl">Choose a <span className="text-lime-700">category</span>:</h2>
+            <ul className="text-center bg-lime-700 px-6 pt-6 m-6 shadow-lg">
                 {infoData.map((info) => {
                     return (
                         <li key={info.id}>
                             <Link to={`/info/${info?.id}`}>
-                                <h3>{info?.fields.category}</h3>
+                                <h3 className="text-lime-400">{info?.fields.category}</h3>
+                                <br/>
                             </Link>
                         </li>
                     )

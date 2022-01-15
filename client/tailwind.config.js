@@ -2,10 +2,15 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
-  purge: [],
   darkMode: false,
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        lime: {
+          1000: '#0B1005',
+        }
+      }
+    },
   },
   variants: {
     extend: {

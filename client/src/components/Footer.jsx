@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col justify-between items-center bg-lime-900 px-1 py-4">
+        <footer className="flex flex-col justify-between items-center bg-lime-900 py-1">
             <div className="flex">
                 <a
                     className = "mb-2 mx-4 rounded-lg text-lime-400 text-3xl hover:text-lime-300 hover:-translate-y-0.5 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-lime-400 focus:ring-opacity-50 active:text-lime-500"

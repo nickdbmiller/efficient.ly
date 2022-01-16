@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 flex justify-between items-center bg-lime-900 px-1 py-4 shadow-xl">
             <a
-                className="flex justify-between items-center rounded-lg text-lime-400 text-2xl
+                className="flex justify-between items-center rounded-lg text-lime-400 text-2xl font-bold
                 hover:text-lime-300 hover:-translate-y-0.5 transform transition
                 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-lime-400 focus:ring-opacity-50
                 active:text-lime-500"

@@ -22,16 +22,18 @@ export default function InfoDetail() {
 
     return (
         <div>
-            <h2>Learn About Efficient {info.fields?.category}</h2>
+            <h2 className="text-xl">
+                Learn About Efficient <span className="text-lime-700 font-bold">{info.fields?.category}</span>
+            </h2>
             
-            <p>{info.fields?.firstParagraph}</p>
-            <img src={info.fields?.imgSrc1} alt={info.fields?.imgAlt1}/>
+            <p className="mt-6">{info.fields?.firstParagraph}</p>
+            <img className="rounded-xl" src={info.fields?.imgSrc1} alt={info.fields?.imgAlt1}/>
 
-            <p>{info.fields?.secondParagraph}</p>
-            <img src={info.fields?.imgSrc2} alt={info.fields?.imgAlt2}/>
+            <p className="mt-6">{info.fields?.secondParagraph}</p>
+            <img className="rounded-xl" src={info.fields?.imgSrc2} alt={info.fields?.imgAlt2}/>
 
-            <p>{info.fields?.thirdParagraph}</p>
-            <img src={info.fields?.imgSrc3} alt={info.fields?.imgAlt3}/>
+            <p className="mt-6">{info.fields?.thirdParagraph}</p>
+            <img className="rounded-xl" src={info.fields?.imgSrc3} alt={info.fields?.imgAlt3}/>
         </div>
     )
 }

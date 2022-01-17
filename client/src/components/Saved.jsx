@@ -6,7 +6,6 @@ export default function Saved() {
     const [saveData, setSaveData] = useState([]);
 
     useEffect(() => {
-        console.log(saveData);
         const fetchSaveData = async() => {
             const res = await api.get('heatingData');
             setSaveData(res.data.records);
@@ -20,17 +19,20 @@ export default function Saved() {
 
     return (
         <div>
-            <h2>Saved Data:</h2>
-            <ul>
+            <h2 className="text-xl"><span className="text-lime-700 font-bold">Saved</span> data:</h2>
+            <ul
+                className="bg-lime-700 px-6 py-6 mt-6 drop-shadow-2xl rounded-lg space-y-4 border-b-2 border-lime-1000
+                grid grid-col-1"
+            >
                 {saveData?.map((house, i) => {
                     return (
                         <li key={i}>
-                            <h3>House #{i + 1}</h3>
-                            {Object.keys(house.fields).map((key, j) => {
-                                return (
-                                    <p key={j}>{key}: {house.fields[key]}</p>
-                                )
-                            })}
+                            <h3
+                                className="font-bold text-lime-400"
+                            >
+                                House #{i + 1}
+                            </h3>
+                            <p>{house.fields.btuPerHr} Btu/Hr</p>
                         </li>
                     )
                 })}

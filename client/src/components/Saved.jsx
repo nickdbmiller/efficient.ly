@@ -21,13 +21,13 @@ export default function Saved() {
         <div>
             <h2 className="text-xl"><span className="text-lime-700 font-bold">Saved</span> data:</h2>
             <ul
-                className="grid grid-col-1"
+                className="grid grid-col-1 lg:grid-cols-3"
             >
                 {saveData?.map((house, i) => {
                     return (
                         <li
                             key={i}
-                            className="bg-lime-700 px-6 py-3 mt-6 drop-shadow-2xl rounded-lg space-y-4 border-b-2 border-lime-1000"
+                            className="lg:max-w-lg bg-lime-700 px-6 py-3 mt-6 drop-shadow-2xl rounded-lg space-y-4 border-b-2 border-lime-1000"
                         >
                             <h3
                                 className="font-bold text-lime-400"

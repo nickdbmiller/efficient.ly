@@ -153,7 +153,7 @@ export default function Tool() {
                 id="toolForm"
                 onSubmit={handleSubmit}
                 className="bg-lime-700 px-6 py-6 mt-6 drop-shadow-2xl rounded-lg space-y-4 border-b-2 border-lime-1000
-                grid grid-col-1"
+                grid grid-col-1 lg:grid-cols-4 lg:space-x-5"
             >
             
                 <div>

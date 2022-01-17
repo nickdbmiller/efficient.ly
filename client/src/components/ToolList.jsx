@@ -20,9 +20,11 @@ export default function ToolList() {
     }
 
     return (
-        <div>
+        <div
+            className="lg:flex lg:flex-col lg:mx-auto"
+        >
             <h2 className="text-xl">Choose a <span className="text-lime-700 font-bold">tool</span>:</h2>
-            <ul className="text-center bg-lime-700 px-6 py-6 m-6 drop-shadow-2xl rounded-lg border-b-2 border-lime-1000">
+            <ul className="text-center bg-lime-700 px-6 py-6 m-6 drop-shadow-2xl rounded-lg border-b-2 border-lime-1000 lg:px-20">
                 {toolData.map((tool) => {
                     return (
                         <li key={tool.id}>

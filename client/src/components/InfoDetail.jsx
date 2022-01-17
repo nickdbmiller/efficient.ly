@@ -27,17 +27,17 @@ export default function InfoDetail() {
             </h2>
 
             <div className="py-2">
-                <img className="float-left rounded-xl m-4 h-20" src={info.fields?.imgSrc1} alt={info.fields?.imgAlt1}/>
+                <img className="float-left rounded-xl m-4 h-20 lg:h-60" src={info.fields?.imgSrc1} alt={info.fields?.imgAlt1}/>
                 <p className="px-6">{info.fields?.firstParagraph}</p>
             </div>
 
             <div className="py-2">
-                <img className="float-left rounded-xl m-4 h-20" src={info.fields?.imgSrc2} alt={info.fields?.imgAlt2}/>
+                <img className="float-left rounded-xl m-4 h-20 lg:h-60" src={info.fields?.imgSrc2} alt={info.fields?.imgAlt2}/>
                 <p className="px-6">{info.fields?.secondParagraph}</p>
             </div>
 
             <div className="py-2">
-                <img className="float-left rounded-xl m-4 h-20" src={info.fields?.imgSrc3} alt={info.fields?.imgAlt3}/>
+                <img className="float-left rounded-xl m-4 h-20 lg:h-60" src={info.fields?.imgSrc3} alt={info.fields?.imgAlt3}/>
                 <p className="px-6">{info.fields?.thirdParagraph}</p>
             </div>
         </div>

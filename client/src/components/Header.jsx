@@ -2,7 +2,7 @@ import Navbar from "./Navbar"
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-50 flex-col justify-start bg-lime-900 px-4 pt-4 shadow-xl border-b-2 border-lime-1000">
+        <header className="sticky top-0 z-50 flex-col justify-start sm:justify-around bg-lime-900 px-4 pt-4 shadow-xl border-b-2 border-lime-1000">
             <a
                 className="flex flex-row rounded-lg text-lime-400 text-2xl font-bold
                 hover:text-lime-300 hover:-translate-y-0.5 transform transition

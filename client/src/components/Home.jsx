@@ -2,7 +2,9 @@ import BarnSplash from "./BarnSplash"
 
 export default function Home() {
     return (
-        <div>
+        <div
+            className="md:flex md:flex-col md:justify-center md:content-center md:items-center"
+        >
             <h2 
                 className="text-xl"
             >

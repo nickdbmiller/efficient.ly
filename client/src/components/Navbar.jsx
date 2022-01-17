@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export default function Navbar() {
     return (
         <nav className="text-lg px-4 py-4">
-            <ul className="flex justify-between text-lime-400">
+            <ul className="flex justify-evenly text-lime-400">
                 <li
                     className="hover:text-lime-300 hover:-translate-y-0.5 transform transition
                     focus:outline-none focus:ring focus:ring-offset-2 focus:ring-lime-400 focus:ring-opacity-50

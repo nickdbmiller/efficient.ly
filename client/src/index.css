@@ -1,7 +1,21 @@
-body {
-    @apply bg-lime-100;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    body {
+        @apply bg-lime-100;
+    }
+}
+
+.slider::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 rounded-full bg-lime-400 cursor-pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    @apply bg-lime-300
+}
+    
+.slider::-webkit-slider-thumb:active {
+    @apply bg-lime-500
+}

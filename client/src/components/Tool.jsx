@@ -106,283 +106,437 @@ export default function Tool() {
     }
 
     return (
-        <div>
-            <h2>Heating Load Calculator</h2>
-            <p>Calculate the heating reqirements for your house. The tool will calculate the size of your heating system in Btu per hour. If there is a field you are unsure about you can leave it as the default, but the more accurately you fill out the tool, the more accurate your result will be.</p>
-            <Link to={`/info/recBDqjgEjNLC6hEu`}>More information on Efficient Heating Systems</Link>
+        <div className="flex flex-col items-center">
+            <div>
+                <h2 className="text-xl">Heating Load <span className="text-lime-700 font-bold">Calculator</span></h2>
+                <p className="mt-4"
+                >
+                    Calculate the heating reqirements for your home in Btu per hour.
+                    The result will be the total output needed from all heating systems
+                    assuming a well sealed building envelope.
+                    This includes a 50% load factor to ensure the system will run below capacity.
+                </p>
+                <p className="mt-2 text-sm text-lime-900"
+                >
+                    The default inputs represent common building specifications in the U.S.
+                    If there is a field you are unsure about, you may leave it as the default.
+                    However, the result will be more accurate if the tool is filled out completely.
+                </p>
+            </div>
+            
+            <Link 
+                to={`/info/recBDqjgEjNLC6hEu`}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 px-5 py-3 rounded-lg shadow-lg inline-block bg-lime-700 border-b-2 border-lime-1000
+                text-lime-100 uppercase tracking-wider font-semibold text-sm
+                hover:bg-lime-600 hover:-translate-y-0.5 transform transition
+                focus:outline-none focus:ring focus:ring-offset-2 focus:ring-lime-700 focus:ring-opacity-50
+                active:bg-lime-800"
+            >
+                More Info
+            </Link>
+            
+            <img 
+                src="https://i.imgur.com/bbyL39P.png"
+                alt="IRC 2018 U.S. Climate Zone Map"
+                title="IRC 2018 U.S. Climate Zone Map"
+                className="mt-4 max-h-70 rounded-sm drop-shadow-2xl
+                sm:max-h-96"
+            />
+
             <form
                 id="toolForm"
                 onSubmit={handleSubmit}
+                className="bg-lime-700 px-6 py-6 mt-6 drop-shadow-2xl rounded-lg space-y-4 border-b-2 border-lime-1000
+                grid grid-col-1"
             >
             
-                <label htmlFor="climateZone">Choose your climate zone:</label>
-                <input
-                    id="climateZone"
-                    type="range"
-                    name="range"
-                    value={input.climateZone}
-                    min="1"
-                    max="8"
-                    step="1"
-                    onChange={handleNumberInput}
-                />
-                <span id="climateZoneOutput">{input.climateZone}</span>
+                <div>
+                    <label htmlFor="climateZone">Climate Zone: </label>
+                    <span
+                        className="text-lime-400 bg-lime-900 rounded-lg px-1 py-1 border-b-2 border-lime-1000"
+                        id="climateZoneOutput"
+                    >
+                        {input.climateZone}
+                    </span>
+                    <input
+                        id="climateZone"
+                        type="range"
+                        name="range"
+                        value={input.climateZone}
+                        min="1"
+                        max="8"
+                        step="1"
+                        onChange={handleNumberInput}
+                        className="ml-2 appearance-none h-1 bg-lime-900 rounded-lg outline-none border-b-2 border-lime-1000 slider"
+                    />
+                </div>
                 
-                <label htmlFor="insulationRValue">Input Insulation R Value:</label>
-                <input
-                    id="insulationRValue"
-                    type="number"
-                    min="0"
-                    step="0.001"
-                    value={input.insulationRValue}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="insulationRValue">Insulation R Value: </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="insulationRValue"
+                        type="number"
+                        min="0"
+                        step="0.001"
+                        value={input.insulationRValue}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="framingRValue">Input R Value of Framing:</label>
-                <input
-                    id="framingRValue"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.framingRValue}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="framingRValue">Framing R Value: </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="framingRValue"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.framingRValue}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="studDepth">Input Wall Stud Depth:</label>
-                <input
-                    id="studDepth"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.studDepth}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="studDepth">Stud Depth (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="studDepth"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.studDepth}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="studWidth">Input Wall Stud Width:</label>
-                <input
-                    id="studWidth"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.studWidth}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="studWidth">Stud Width (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="studWidth"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.studWidth}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="studSpacing">Input Wall Stud Spacing:</label>
-                <input
-                    id="studSpacing"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.studSpacing}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="studSpacing">Stud Spacing (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="studSpacing"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.studSpacing}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="exteriorWallInsulationThickness">Input Wall Exterior Insulation Thickness:</label>
-                <input
-                    id="exteriorWallInsulationThickness"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.exteriorWallInsulationThickness}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="exteriorWallInsulationThickness">Wall Exterior Insulation (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="exteriorWallInsulationThickness"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.exteriorWallInsulationThickness}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="interiorWallInsulationThickness">Input Wall Interior Insulation Thickness:</label>
-                <input
-                    id="interiorWallInsulationThickness"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.interiorWallInsulationThickness}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="interiorWallInsulationThickness">Wall Interior Insulation (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="interiorWallInsulationThickness"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.interiorWallInsulationThickness}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="rafterDepth">Input Rafter Depth:</label>
-                <input
-                    id="rafterDepth"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.rafterDepth}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="rafterDepth">Rafter Depth (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="rafterDepth"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.rafterDepth}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="rafterWidth">Input Rafter Width:</label>
-                <input
-                    id="rafterWidth"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.rafterWidth}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="rafterWidth">Rafter Width (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="rafterWidth"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.rafterWidth}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="rafterSpacing">Input Rafter Spacing:</label>
-                <input
-                    id="rafterSpacing"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.rafterSpacing}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="rafterSpacing">Rafter Spacing (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="rafterSpacing"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.rafterSpacing}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="exteriorRoofInsulationThickness">Input Roof Exterior Insulation Thickness:</label>
-                <input
-                    id="exteriorRoofInsulationThickness"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.exteriorRoofInsulationThickness}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="exteriorRoofInsulationThickness">Roof Exterior Insulation (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="exteriorRoofInsulationThickness"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.exteriorRoofInsulationThickness}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="interiorRoofInsulationThickness">Input Roof Interior Insulation Thickness:</label>
-                <input
-                    id="interiorRoofInsulationThickness"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.interiorRoofInsulationThickness}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="interiorRoofInsulationThickness">Roof Interior Insulation (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="interiorRoofInsulationThickness"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.interiorRoofInsulationThickness}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="roofPitch">Input Roof Pitch:</label>
-                <input
-                    id="roofPitch"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.roofPitch}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="roofPitch">Roof Pitch (Degrees): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="roofPitch"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.roofPitch}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="joistDepth">Input Floor Joist Depth:</label>
-                <input
-                    id="joistDepth"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.joistDepth}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="joistDepth">Floor Joist Depth (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="joistDepth"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.joistDepth}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="joistWidth">Input Floor Joist Depth:</label>
-                <input
-                    id="joistWidth"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.joistWidth}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="joistWidth">Floor Joist Depth (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="joistWidth"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.joistWidth}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="joistSpacing">Input Floor Joist Spacing:</label>
-                <input
-                    id="joistSpacing"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.joistSpacing}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="joistSpacing">Floor Joist Spacing (in): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="joistSpacing"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.joistSpacing}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="houseWidth">Input Width of House:</label>
-                <input
-                    id="houseWidth"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.houseWidth}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="houseWidth">Width of House (ft): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="houseWidth"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.houseWidth}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="houseLength">Input Length of House:</label>
-                <input
-                    id="houseLength"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.houseLength}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="houseLength">Length of House (ft): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="houseLength"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.houseLength}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="storyHeight">Input Height of Stories:</label>
-                <input
-                    id="storyHeight"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.storyHeight}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="storyHeight">Height of Each Story (ft): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="storyHeight"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.storyHeight}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="storyNum">Input Number of Stories:</label>
-                <input
-                    id="storyNum"
-                    type="number"
-                    min="0"
-                    step="1"
-                    value={input.storyNum}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="storyNum">Number of Stories: </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="storyNum"
+                        type="number"
+                        min="0"
+                        step="1"
+                        value={input.storyNum}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="windowNum">Input Number of Windows:</label>
-                <input
-                    id="windowNum"
-                    type="number"
-                    min="0"
-                    step="1"
-                    value={input.windowNum}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="windowNum">Number of Windows: </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="windowNum"
+                        type="number"
+                        min="0"
+                        step="1"
+                        value={input.windowNum}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="windowLength">Input Length of Windows:</label>
-                <input
-                    id="windowLength"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.windowLength}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="windowLength">Length of Windows (ft): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="windowLength"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.windowLength}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="windowWidth">Input Width of Windows:</label>
-                <input
-                    id="windowWidth"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.windowWidth}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="windowWidth">Width of Windows (ft): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="windowWidth"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.windowWidth}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="windowRValue">Input Wall Interior Insulation Thickness:</label>
-                <input
-                    id="windowRValue"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.windowRValue}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="windowRValue">Window R Value: </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="windowRValue"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.windowRValue}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <label htmlFor="indoorTempNight">What is the coldest you ever want your house to get at night?:</label>
-                <input
-                    id="indoorTempNight"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={input.indoorTempNight}
-                    onChange={handleNumberInput}
-                />
+                <div>
+                    <label className="block" htmlFor="indoorTempNight">Nighttime Indoor Temperature (F): </label>
+                    <input
+                        className="text-lime-400 bg-lime-900 rounded-lg border-b-2 border-lime-1000"
+                        id="indoorTempNight"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value={input.indoorTempNight}
+                        onChange={handleNumberInput}
+                    />
+                </div>
 
-                <button>Calculate</button>
-                <p>Heating Load: {input.btuPerHr} Btu per hour</p>
+                <button
+                    className="px-5 py-3 rounded-lg shadow-lg inline-block bg-lime-400 border-b-2 border-lime-1000
+                    text-lime-900 uppercase tracking-wider font-semibold text-sm
+                    hover:bg-lime-300 hover:-translate-y-0.5 transform transition
+                    focus:outline-none focus:ring focus:ring-offset-2 focus:ring-lime-400 focus:ring-opacity-50
+                    active:bg-lime-500"
+                >
+                    Calculate
+                </button>
+
+                <div className="font-semibold uppercase tracking-wider text-md">
+                    <p className="text-lime-400">Heating Load: </p>
+                    <p className="text-lime-100">{input.btuPerHr} Btu/hr</p>
+                </div>
             </form>
-            <button onClick={saveData}>Save Data</button>
-            <button onClick={resetTool}>Reset Fields</button>
+
+            <div className="m-4 space-x-2">
+                <button
+                    onClick={saveData}
+                    className="px-5 py-3 rounded-lg shadow-lg inline-block bg-lime-700 border-b-2 border-lime-1000
+                    text-lime-100 uppercase tracking-wider font-semibold text-sm
+                    hover:bg-lime-600 hover:-translate-y-0.5 transform transition
+                    focus:outline-none focus:ring focus:ring-offset-2 focus:ring-lime-700 focus:ring-opacity-50
+                    active:bg-lime-800"
+                >
+                    Save Data
+                </button>
+
+                <button
+                    onClick={resetTool}
+                    className="px-5 py-3 rounded-lg inline-block bg-gray-300
+                    text-lime-1000 uppercase tracking-wider font-semibold text-sm border-b-2 border-lime-1000
+                    hover:bg-gray-200
+                    focus:outline-none focus:ring focus:ring-offset-2 focus:ring-gray-300 focus:ring-opacity-50
+                    active:bg-gray-400"
+                >
+                    Reset
+                </button>
+            </div>
         </div>
     )
 }

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../services/apiConfig";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Tool() {
+    
     const default_input = {                     // UNITS:
         "climateZone": 3,                       // no units
         "framingRValue": 0.910,                 // R
@@ -32,9 +35,9 @@ export default function Tool() {
         "indoorTempNight": 62,                  // degF
         "btuPerHr": 0,                          // Btu/hr
     };
-
+    
     const [input, setInput] = useState(default_input);
-
+    
     const handleNumberInput = (e) => {
         const { id, valueAsNumber } = e.target;
         setInput((prevInput) => ({
@@ -42,7 +45,7 @@ export default function Tool() {
             [id]: valueAsNumber,
         }));
     }
-
+    
     let result = 0;
     const calculate = () => {
         let worstCaseTemp = 0;      // degF
@@ -63,7 +66,7 @@ export default function Tool() {
         } else if (input.climateZone === 8) {
             worstCaseTemp = -60;
         }
-
+        
         // Walls
         let height = input.storyHeight * input.storyNum;
         let wallSurfaceArea = 2 * ((input.houseLength + input.houseWidth) * height);
@@ -75,18 +78,18 @@ export default function Tool() {
         let roofSurfaceArea = input.houseLength * (input.houseWidth / Math.cos(input.roofPitch * (Math.PI/180)));        
         let avgRoofRValue = ((input.rafterDepth * 0.69) * ((input.rafterSpacing - input.rafterWidth) * input.insulationRValue + input.rafterWidth * input.framingRValue) / input.rafterSpacing) + ((input.exteriorRoofInsulationThickness + input.interiorRoofInsulationThickness) * input.insulationRValue);
         let roofBtuPerHrF = roofSurfaceArea / avgRoofRValue;
-
+        
         // Floor
         let floorSurfaceArea = input.houseLength * input.houseWidth;
         let avgFloorRValue = input.joistDepth * ((input.joistSpacing - input.joistWidth) * input.insulationRValue + input.joistWidth * input.framingRValue) / input.joistSpacing;
         let floorBtuPerHrF = floorSurfaceArea / avgFloorRValue;
-
+        
         // Total
         let totalBtuPerHrF = wallBtuPerHrF + roofBtuPerHrF + floorBtuPerHrF;
-
+        
         result = (Math.ceil(1.5 * totalBtuPerHrF * (input.indoorTempNight - worstCaseTemp)));
-        }
-
+    }
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         calculate();
@@ -95,10 +98,13 @@ export default function Tool() {
             "btuPerHr": result,
         }));
     };
+    
+    const notify = (message) => toast.success(message, {toastId: "prevent-duplication"});
 
     const saveData = async () => {
         const fields = input;
         await api.post("heatingData", { fields });
+        notify("Save Successful!");
     }
 
     const resetTool = () => {
@@ -109,15 +115,13 @@ export default function Tool() {
         <div className="flex flex-col items-center">
             <div>
                 <h2 className="text-xl">Heating Load <span className="text-lime-700 font-bold">Calculator</span></h2>
-                <p className="mt-4"
-                >
+                <p className="mt-4">
                     Calculate the heating reqirements for your home in Btu per hour.
                     The result will be the total output needed from all heating systems
                     assuming a well sealed building envelope.
                     This includes a 50% load factor to ensure the system will run below capacity.
                 </p>
-                <p className="mt-2 text-sm text-lime-900"
-                >
+                <p className="mt-2 text-sm text-lime-900">
                     The default inputs represent common building specifications in the U.S.
                     If there is a field you are unsure about, you may leave it as the default.
                     However, the result will be more accurate if the tool is filled out completely.
@@ -537,6 +541,18 @@ export default function Tool() {
                     Reset
                 </button>
             </div>
+            <ToastContainer
+                className="save-toast"
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     )
 }

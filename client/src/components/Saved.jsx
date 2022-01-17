@@ -21,7 +21,7 @@ export default function Saved() {
         <div>
             <h2 className="text-xl"><span className="text-lime-700 font-bold">Saved</span> data:</h2>
             <ul
-                className="grid grid-col-1 lg:grid-cols-3"
+                className="grid grid-col-1 lg:grid-cols-3 lg:space-x-10"
             >
                 {saveData?.map((house, i) => {
                     return (

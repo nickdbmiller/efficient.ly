@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main className="text-lime-1000 px-8 py-4">
+      <main className="flex flex-col text-lime-1000 px-8 py-4">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/info" element={<Info />} />

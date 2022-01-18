@@ -14,7 +14,7 @@ export default function InfoDetail() {
             setInfo(res.data);
         };
         fetchInfo();
-    }, []);
+    }, [id]);
 
     if (!info.fields) {
         return <LoadingPage />

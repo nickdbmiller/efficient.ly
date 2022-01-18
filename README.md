@@ -90,10 +90,10 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 |---|---| ---|
 |Jan 7-9| Prompt / Wireframes / Component Hierarchy / Timeframes | Complete
 |Jan 10| Project Approval / Header and Footer / Homepage / 404 Page | Complete
-|Jan 11| Tool Page | Incomplete
-|Jan 12| Tool Page / Saved Houses Page| Incomplete
-|Jan 13| Informational Pages / CSS Framework| Incomplete
-|Jan 14| CSS Polish | Incomplete
+|Jan 11| Tool Page | Complete
+|Jan 12| Tool Page / Saved Houses Page| Complete
+|Jan 13| Informational Pages / CSS Framework| Complete
+|Jan 14| CSS Polish | Complete
 |Jan 15| Post MVP | Incomplete
 |Jan 16| Post MVP | Incomplete
 |Jan 17| Post MVP | Incomplete
@@ -104,22 +104,22 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 | Component | Priority  | Estimated Time    | Curently Invested | Actual Time   |
 | ---       | :---:     |  :---:            | :---:         | :---:         |
 | Airtable Setup | H    | 1hrs              | 0 hrs         | X hrs         |
-| Header | M    | 2hrs              | 0 hrs         | X hrs         |
-| Footer | L    | 1hrs              | 0 hrs         | X hrs         |
-| Homepage | H    | 2hrs              | 0 hrs         | X hrs         |
-| Info Page | H    | 3hrs              | 0 hrs         | X hrs         |
-| Info Page Details | H    | 3hrs              | 0 hrs         | X hrs         |
-| Error Page | M    | 2hrs              | 0 hrs         | X hrs         |
-| Heat Sizing Tool Page | H    | 3hrs              | 0 hrs         | X hrs         |
-| Heat Sizing Tool JS Logic | H    | 3hrs              | 0 hrs         | X hrs         |
-| Category Specific Airtables | H    | 3hrs              | 2 hrs         | X hrs         |
-| Saved House Page | H    | 3hrs              | 0 hrs         | X hrs         |
-| Saved House Airtable | H    | 3hrs              | 2 hrs         | X hrs         |
-| CSS Framework Setup | H    | 3hrs              | 0 hrs         | X hrs         |
-| CSS Polish | M    | 4hrs              | 0 hrs         | X hrs         |
+| Header | M    | 2hrs              | 2 hrs         | 2 hrs         |
+| Footer | L    | 1hrs              | 1 hrs         | 1 hrs         |
+| Homepage | H    | 2hrs              | 2 hrs         | 2 hrs         |
+| Info Page | H    | 3hrs              | 2 hrs         | 2 hrs         |
+| Info Page Details | H    | 3hrs              | 3 hrs         | 3 hrs         |
+| Error Page | M    | 2hrs              | 1 hrs         | 1 hrs         |
+| Heat Sizing Tool Page | H    | 3hrs              | 5 hrs         | 5 hrs         |
+| Heat Sizing Tool JS Logic | H    | 3hrs              | 3 hrs         | 3 hrs         |
+| Category Specific Airtables | H    | 3hrs              | 2 hrs         | 2 hrs         |
+| Saved House Page | H    | 3hrs              | 3 hrs         | 3 hrs         |
+| Saved House Airtable | H    | 3hrs              | 2 hrs         | 2 hrs         |
+| CSS Framework Setup | H    | 3hrs              | 5 hrs         | 5 hrs         |
+| CSS Polish | M    | 4hrs              | 10 hrs         | 4 hrs         |
 | Darkmode | L    | 2hrs              | 0 hrs         | X hrs         |
 | Interactive Graphs | L    | 3hrs              | 0 hrs         | X hrs         |
-| Total     |           | 41hrs             | 0hrs          | Xhrs        |
+| Total     |           | 41hrs             | 40hrs          | 40hrs        |
 
 ## SWOT Analysis
 ### Strengths

@@ -94,10 +94,10 @@ This project uses [Airtable](https://www.airtable.com/) as an API. The response 
 |Jan 12| Tool Page / Saved Houses Page| Complete
 |Jan 13| Informational Pages / CSS Framework| Complete
 |Jan 14| CSS Polish | Complete
-|Jan 15| Post MVP | Incomplete
-|Jan 16| Post MVP | Incomplete
-|Jan 17| Post MVP | Incomplete
-|Jan 18| Presentation | Incomplete
+|Jan 15| Post MVP | Complete
+|Jan 16| Post MVP | Complete
+|Jan 17| Post MVP | Complete
+|Jan 18| Presentation | Complete
 
 ## Timeframes
 
